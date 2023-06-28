@@ -14,7 +14,7 @@ pub fn main() void {
 
     // Launch Feather
     _ = linux.execve("/app/feather",
-                     @ptrCast([*:null]?[*:0]u8, std.os.argv[0..].ptr),
+                     @ptrCast([*:null]?[*:0]u8, std.os.argv.ptr),
                      @ptrCast([*:null]?[*:0]u8, std.os.environ.ptr));
     linux.exit(0);
 }
